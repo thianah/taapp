@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+
+
+
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url("./assets/home%20bg.jpg"); /* Corrected file path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.home2{
+  background-image: url("./assets/photo1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+ .home2 h2 {
+  margin-bottom: 80px;
+  font-size: 2rem;
+  font-weight:300;
+  font-style: italic;
+ }
+ .home2 p{
+
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center; /* Center text for smaller screens */
+  color:goldenrod;
+ }
+.home h1 {
+  margin-bottom: 80px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.home h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+/*gallery styles*/
+.img{
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+padding: 20px;
+  
+  color: white;
+  text-align: center; /* Center text for smaller screens */
+}
+.img:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.photo h1{
+  background-color: rgba(32, 2, 32, 0.89);
+  color: white;
+  width: 45%;
+  height: 10vh;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.gift{
+  background-color: #10070c;
+  height: 100vh;
+ color: white;
+}
+
+.gift p{
+  padding: 5px;
+
+
+}
+.gift h1{
+  color: goldenrod;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Allura', cursive;
+  text-align: center;
+  
+}
+.gift h2{
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family:  'Dancing Script', cursive;
+  font-style: italic;
+  color:goldenrod;
+  text-align: center; /* Center text for smaller screens */
+  margin: 10px;
+  padding: 10px;
+
+
+
+  
+}
+
+
+/* Sidebar styles for default (desktop/big screens) */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hidden */
+  transition: right 0.3s ease;
+}
+
+.sidebar.open {
+  right: 0; /* Slide in when open */
+}
+
+.sidebar.closed {
+  right: -250px; /* Slide out when closed */
+}
+
+/* Toggle button styles */
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-button.open-button {
+  right: 20px; /* Position for the open button */
+}
+
+.toggle-button.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Position for the close button inside the sidebar */
+}
+
+/* Hover effect for buttons */
+.toggle-button:hover {
+  background-color: #b3008cab;
+}
+
+
+/* Media query for smaller screens (phones) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Smaller width for phones */
+    height: 100vh; /* Full height for sidebar */
+    position: fixed;
+    top: 0;
+    right: -200px; /* Initially hidden */
+    flex-direction: column; /* Stack items vertically */
+    transition: right 0.3s ease; /* Sliding animation */
+    color: white;
+    background-color: #10070c; /* Darker background for phones */
+  }
+
+  .toggle-button {
+    display: block; /* Show toggle button on smaller screens */
+    top: 10px;
+    right: 10px; /* Adjust position for smaller screens */
+  }
+  .ho{
+    padding: 10px;
+    margin: 10px;
+  
+    color: white;
+    text-align: center; /* Center text for smaller screens */
+  }
+}
+
+/* Media query for larger screens (desktops/laptops) */
+@media (min-width: 769px) {
+  .sidebar {
+   font-style: italic; 
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 50;
+    font-size: 1rem; /* Font size for larger screens */
+    color: white;
+    width: 100%; /* Full width for horizontal navbar */
+    height: 60px; /* Height for horizontal navbar */
+    background-color: transparent; /* Make the navbar background transparent */
+    padding-left: 80%;
+    box-shadow: none; /* Remove shadow for a seamless look */
+    position: fixed;
+    top: 0;
+    left: 0; /* Stretch across the top */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-around; /* Space out items horizontally */
+    align-items: center;
+    transition: none; /* No sliding animation for horizontal navbar */
+    z-index: 10; /* Ensure the navbar is above the background */
+  }
+
+  .sidebar.open,
+  .sidebar.closed {
+    right: 0; /* No sliding effect for horizontal navbar */
+  }
+
+  .toggle-button {
+    display: none; /* Hide toggle button on larger screens */
+  }
+}
