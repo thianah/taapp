@@ -49,21 +49,90 @@
   font-weight: normal;
 }
 /*gallery styles*/
-.img{
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-padding: 20px;
-  
-  color: white;
-  text-align: center; /* Center text for smaller screens */
+.image-container {
+  min-height: 75px;
+  height: fit-content;
+  width: 50%;
+  padding: 10px; /* Simplified padding */
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto; /* Center the container */
+  justify-content: flex-start;
+  box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
 }
-.img:hover {
-  transform: scale(1.05); /* Scale up on hover */
+
+.image-container-bg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.image-container-block {
+  flex: 1 1 calc(33.33% - 20px); /* Ensure three columns with spacing */
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.album .img {
+  width: 100%; /* Ensure images take full width of their container */
+  height: 250px; /* Adjust height for consistent sizing */
+  object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+  margin-bottom: 10px;
+}
+
+.album .img.img-big {
+  width: 100%; /* Ensure big images also take full width */
+  height: 350px; /* Slightly larger height for "big" images */
+}
+
+.album .img.img-last {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .album .img {
+    width: 100%; /* Ensure images remain responsive on smaller screens */
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .album .img.img-big {
+    height: 300px; /* Adjust big image height for smaller screens */
+  }
+
+  .img-container-bg {
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .image-container-block {
+    flex: 1 1 calc(50% - 20px); /* Two columns for smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .album .img {
+    width: 100%; /* Full width for very small screens */
+    height: 180px; /* Adjust height for very small screens */
+  }
+
+  .album .img.img-big {
+    height: 250px; /* Adjust big image height for very small screens */
+  }
+
+  .img-container-bg {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .image-container-block {
+    flex: 1 1 100%; /* Single column for very small screens */
+  }
+}
+
 
 .photo h1{
   background-color: rgba(32, 2, 32, 0.89);
@@ -194,7 +263,6 @@ padding: 20px;
 /* Media query for larger screens (desktops/laptops) */
 @media (min-width: 769px) {
   .sidebar {
-   font-style: italic; 
    font-family: Arial, Helvetica, sans-serif;
    font-weight: 50;
     font-size: 1rem; /* Font size for larger screens */
