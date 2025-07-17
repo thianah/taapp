@@ -2,42 +2,6 @@
 
 
 
-
-
-.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-image: url("./assets/home%20bg.jpg"); /* Corrected file path */
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-.home2{
-  background-image: url("./assets/photo1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-}
- .home2 h2 {
-  margin-bottom: 80px;
-  font-size: 2rem;
-  font-weight:300;
-  font-style: italic;
- }
- .home2 p{
-
-  font-size: 1.5rem;
-  font-weight: 300;
-  font-style: italic;
-  text-align: center; /* Center text for smaller screens */
-  color:goldenrod;
- }
 .home h1 {
   margin-bottom: 80px;
   font-size: 2rem;
@@ -53,12 +17,12 @@
   min-height: 75px;
   height: fit-content;
   width: 50%;
-  padding: 10px; /* Simplified padding */
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto; /* Center the container */
+  margin: 0 auto;
   justify-content: flex-start;
-  box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
+  box-sizing: border-box;
 }
 
 .image-container-bg {
@@ -70,21 +34,21 @@
 }
 
 .image-container-block {
-  flex: 1 1 calc(33.33% - 20px); /* Ensure three columns with spacing */
+  flex: 1 1 calc(33.33% - 20px);
   margin: 10px;
   box-sizing: border-box;
 }
 
 .album .img {
-  width: 100%; /* Ensure images take full width of their container */
-  height: 250px; /* Adjust height for consistent sizing */
-  object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
 .album .img.img-big {
-  width: 100%; /* Ensure big images also take full width */
-  height: 350px; /* Slightly larger height for "big" images */
+  width: 100%;
+  height: 350px;
 }
 
 .album .img.img-last {
@@ -93,12 +57,12 @@
 
 @media (max-width: 768px) {
   .album .img {
-    width: 100%; /* Ensure images remain responsive on smaller screens */
-    height: 200px; /* Adjust height for smaller screens */
+    width: 100%;
+    height: 200px;
   }
 
   .album .img.img-big {
-    height: 300px; /* Adjust big image height for smaller screens */
+    height: 300px;
   }
 
   .img-container-bg {
@@ -108,18 +72,18 @@
   }
 
   .image-container-block {
-    flex: 1 1 calc(50% - 20px); /* Two columns for smaller screens */
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 500px) {
   .album .img {
-    width: 100%; /* Full width for very small screens */
-    height: 180px; /* Adjust height for very small screens */
+    width: 100%;
+    height: 180px;
   }
 
   .album .img.img-big {
-    height: 250px; /* Adjust big image height for very small screens */
+    height: 250px;
   }
 
   .img-container-bg {
@@ -129,12 +93,11 @@
   }
 
   .image-container-block {
-    flex: 1 1 100%; /* Single column for very small screens */
+    flex: 1 1 100%;
   }
 }
 
-
-.photo h1{
+.photo h1 {
   background-color: rgba(32, 2, 32, 0.89);
   color: white;
   width: 45%;
@@ -149,38 +112,66 @@
   font-style: italic;
 }
 
-.gift{
+.gift {
   background-color: #10070c;
-  height: 100vh;
- color: white;
+  height: 100%;
+  color: white;
 }
 
-.gift p{
+.gift p {
   padding: 5px;
-
-
 }
-.gift h1{
+.gift h1 {
   color: goldenrod;
   font-size: 2rem;
   font-weight: 500;
-  font-family: 'Allura', cursive;
+  font-family: "Allura", cursive;
   text-align: center;
-  
 }
-.gift h2{
+.gift h2 {
   font-size: 1.2rem;
   font-weight: 400;
-  font-family:  'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-style: italic;
-  color:goldenrod;
-  text-align: center; /* Center text for smaller screens */
+  color: goldenrod;
+  text-align: center;
   margin: 10px;
   padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .gift h1 {
+    font-size: 2.5rem;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .gift h2 {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  .gift p {
+    font-size: 1.5rem;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px){
+.gift-accounts{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px , 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(250px , 1fr));
+  gap: 20px;
+}
 
 
 
-  
 }
 
 
@@ -193,16 +184,17 @@
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
-  right: -250px; /* Initially hidden */
+  right: -250px;
   transition: right 0.3s ease;
 }
 
 .sidebar.open {
-  right: 0; /* Slide in when open */
+  right: 0;
+  z-index: 100;
 }
 
 .sidebar.closed {
-  right: -250px; /* Slide out when closed */
+  right: -250px;
 }
 
 /* Toggle button styles */
@@ -217,13 +209,13 @@
 }
 
 .toggle-button.open-button {
-  right: 20px; /* Position for the open button */
+  right: 20px;
 }
 
 .toggle-button.close-button {
   position: absolute;
   top: 10px;
-  right: 10px; /* Position for the close button inside the sidebar */
+  right: 10px;
 }
 
 /* Hover effect for buttons */
@@ -231,63 +223,62 @@
   background-color: #b3008cab;
 }
 
-
 /* Media query for smaller screens (phones) */
 @media (max-width: 768px) {
   .sidebar {
-    width: 200px; /* Smaller width for phones */
-    height: 100vh; /* Full height for sidebar */
+    width: 200px;
+    height: 100vh;
     position: fixed;
     top: 0;
-    right: -200px; /* Initially hidden */
-    flex-direction: column; /* Stack items vertically */
-    transition: right 0.3s ease; /* Sliding animation */
+    right: -200px;
+    flex-direction: column;
+    transition: right 0.3s ease;
     color: white;
-    background-color: #10070c; /* Darker background for phones */
+    background-color: #10070c;
   }
 
   .toggle-button {
-    display: block; /* Show toggle button on smaller screens */
+    display: block;
     top: 10px;
-    right: 10px; /* Adjust position for smaller screens */
+    right: 10px;
   }
-  .ho{
+  .ho {
     padding: 10px;
     margin: 10px;
-  
+
     color: white;
-    text-align: center; /* Center text for smaller screens */
+    text-align: center;
   }
 }
 
 /* Media query for larger screens (desktops/laptops) */
 @media (min-width: 769px) {
   .sidebar {
-   font-family: Arial, Helvetica, sans-serif;
-   font-weight: 50;
-    font-size: 1rem; /* Font size for larger screens */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 50;
+    font-size: 1rem;
     color: white;
-    width: 100%; /* Full width for horizontal navbar */
-    height: 60px; /* Height for horizontal navbar */
-    background-color: transparent; /* Make the navbar background transparent */
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
     padding-left: 80%;
-    box-shadow: none; /* Remove shadow for a seamless look */
+    box-shadow: none;
     position: fixed;
     top: 0;
-    left: 0; /* Stretch across the top */
-    display: flex; /* Flexbox for horizontal layout */
-    justify-content: space-around; /* Space out items horizontally */
+    left: 0;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    transition: none; /* No sliding animation for horizontal navbar */
-    z-index: 10; /* Ensure the navbar is above the background */
+    transition: none;
+    z-index: 10;
   }
 
   .sidebar.open,
   .sidebar.closed {
-    right: 0; /* No sliding effect for horizontal navbar */
+    right: 0;
   }
 
   .toggle-button {
-    display: none; /* Hide toggle button on larger screens */
+    display: none;
   }
 }

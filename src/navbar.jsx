@@ -33,20 +33,20 @@ function Sidebar() {
           Home
         </Link>
         <br />
-        <Link to="/About" className="ho" onClick={toggleSidebar}>
-          About
-        </Link>
-        <br />
         <Link to="/Story" className="ho" onClick={toggleSidebar}>
           Story
         </Link>
         <br />
-        <Link to="/Home" className="ho" onClick={toggleSidebar}>
+        <Link to="/Photo" className="ho" onClick={toggleSidebar}>
           Photo
         </Link>
         <br />
         <Link to="/Gift" className="ho" onClick={toggleSidebar}>
        Gifts
+        </Link>
+        <br />
+        <Link to="/Rsvp" className="ho" onClick={toggleSidebar}>
+          RSVP
         </Link>
       </div>
     </div>

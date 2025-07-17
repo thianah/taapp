@@ -3,13 +3,14 @@ function gift() {
         <div id="Gift">
         <div className="gift">
             <h1>Gifts</h1>
-            <p> We Appreciate your presence on our special day. If you would like to bless us with a gift, we would be grateful. </p>
+            <p className=""> We Appreciate your presence on our special day. If you would like to bless us with a gift, we would be grateful. </p>
 <br />
 
- <p> You can send your cash gift to the following accounts:
+ <p className=""> You can send your cash gift to the following accounts:
 
     <br />
     <br />
+    <div className="gift-accounts">
     <h2> Euro Account</h2>
     <strong>Bank Name: First Bank</strong>
     <br />
@@ -27,11 +28,12 @@ function gift() {
     <h2> Naira Account</h2>
     <strong>Bank Name: First Bank</strong>
     <br />
-    <strong>Account Name: Adenike</strong>
+    <strong>Account Name: Ekundayo Christianah Adenike</strong>
     <br />
-    <strong>Account Number: 1122334455</strong>
-
+    <strong>Account Number: 3194053537</strong>
+    </div>
  </p>
+ 
  
         </div>
         </div>
