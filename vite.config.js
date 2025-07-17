@@ -9,6 +9,7 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
+  base: '/Tope-adenike/',
   server: {
     allowedHosts: [
       '113625b59f27.ngrok-free.app' 
