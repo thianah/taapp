@@ -11,7 +11,7 @@ import './index.css';
 
 function App() {
   return (
-    <Router basename="/Tope-adenike">
+    <Router basename="/">
       <Header />
       <Sidebar />
       <Routes>
