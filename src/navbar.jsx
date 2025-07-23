@@ -30,19 +30,19 @@ function Sidebar() {
 
         {/* Use Link components for navigation */}
         <Link to="/" className="ho" onClick={toggleSidebar}>
-          Home
+          HOME
         </Link>
         <br />
         <Link to="/Story" className="ho" onClick={toggleSidebar}>
-          Story
+        STORY
         </Link>
         <br />
         <Link to="/Photo" className="ho" onClick={toggleSidebar}>
-          Photo
+          PHOTOS
         </Link>
         <br />
         <Link to="/Gift" className="ho" onClick={toggleSidebar}>
-       Gifts
+       GIFT
         </Link>
         <br />
         <Link to="/Rsvp" className="ho" onClick={toggleSidebar}>
