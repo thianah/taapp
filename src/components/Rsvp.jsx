@@ -12,10 +12,14 @@ const Rsvp = () => {
 
   return (
     <div>
-      <form
+      {!submitted ? (
+      <form 
         className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md"
         onSubmit={handleSubmit}
-   name="contact"netlify >
+        name="rsvp"
+         method="POST"
+          data-netlify="true" 
+   >
         <h2 className="text-2xl font-bold text-center mb-6">RSVP Form</h2>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="name">
@@ -88,9 +92,11 @@ const Rsvp = () => {
           </button>
         </div>
       </form>
-      {submitted && (
+      ) : (
         <div className="text-center mt-8">
-          <p className="text-gray-600">Thank you for your response!</p>
+          <p className="text-gray-600 text-lg font-semibold">
+            Thank you for registering!
+          </p>
         </div>
       )}
     </div>
