@@ -15,7 +15,7 @@ const Rsvp = () => {
       <form
         className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md"
         onSubmit={handleSubmit}
-      >
+   name="contact"netlify >
         <h2 className="text-2xl font-bold text-center mb-6">RSVP Form</h2>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="name">
