@@ -12,7 +12,8 @@ export default defineConfig({
   // base: '/Tope-adenike/',
   server: {
     allowedHosts: [
-      '113625b59f27.ngrok-free.app' 
+      '113625b59f27.ngrok-free.app',
+      'd8396997d3e2.ngrok-free.app' 
     ]
   }
 })

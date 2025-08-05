@@ -25,11 +25,15 @@ function Home() {
   const [timeLeft, setTimeLeft] = useState({});
 
   useEffect(() => {
-    images.forEach((src) => {
+    const preload = (src) => {
       const img = new Image();
       img.src = src;
-    });
-  }, []);
+    };
+  
+    preload(images[currentImage]);
+    preload(images[(currentImage + 1) % images.length]);
+  }, [currentImage]);
+  
 
   // Slideshow effect
   useEffect(() => {

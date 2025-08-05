@@ -49,22 +49,16 @@ function Photo() {
   return (
     <main>
       <div id="photo" className="px-4 bg-black py-8">
-        <h1 className="text-4xl font-extrabold text-[#d2b6ae] mb-2 text-center tracking-wide drop-shadow">
-          Our Pictures
-        </h1>
-        <p className="text-lg text-gray-700 mb-8 text-center">
-          A collection of our favorite Pictures.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((image, index) => (
             <div
               key={index}
-              className="w-full flex items-center justify-center bg-white rounded shadow-lg p-2"
+              className="relative w-full aspect-square overflow-hidden rounded-lg shadow-md group"
             >
               <ImageWithLoader
                 src={image}
                 alt={`Wedding photo ${index + 1}`}
-                className="w-full max-h-80 object-contain rounded"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           ))}

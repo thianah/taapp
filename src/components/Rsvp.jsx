@@ -14,10 +14,8 @@ const Rsvp = () => {
           data-netlify-honeypot="bot-field"
           className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md"
         >
-          {/* Hidden input for Netlify form name */}
           <input type="hidden" name="form-name" value="rsvp" />
 
-          {/* Honeypot field */}
           <p hidden>
             <label>
               Don’t fill this out: <input name="bot-field" />
@@ -72,8 +70,8 @@ const Rsvp = () => {
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#d2b6ae]"
             >
               <option value="">Select an option</option>
-              <option value="Bride friend">Bride friend</option>
-              <option value="Groom friend">Groom friend</option>
+              <option value="Bride friend">Bride's friend</option>
+              <option value="Groom friend">Groom's friend</option>
               <option value="Family">Family</option>
               <option value="Other">Other</option>
             </select>

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --heading-font: 'Playfair Display', serif;
+  --accent-font: 'Dancing Script', cursive;
+}
+
+body {
+  font-family: var(--heading-font);
+}
+
 .home h1 {
   margin-bottom: 80px;
   font-size: 2rem;
@@ -189,7 +198,7 @@
 /* Media query for larger screens (desktops/laptops) */
 @media (min-width: 769px) {
   .sidebar {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family:  'Playfair Display', serif; */
     font-weight: 50;
     font-size: 1rem;
     color: white;
