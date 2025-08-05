@@ -5,24 +5,39 @@ const Rsvp = () => {
   const [comingFor, setComingFor] = useState(""); // Track which is selected
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // Remove preventDefault to allow actual Netlify form submission
+    // e.preventDefault();
     setSubmitted(true);
-    // You can handle form data here
   };
 
   return (
     <div>
       {!submitted ? (
         <form
-          className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md"
-          onSubmit={handleSubmit}
           name="rsvp"
           method="POST"
           data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+          className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md"
         >
+          {/* Hidden form name for Netlify */}
+          <input type="hidden" name="form-name" value="rsvp" />
+
+          {/* Honeypot field */}
+          <p hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
+
           <h2 className="text-2xl font-bold text-center mb-6">RSVP Form</h2>
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="name">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-2"
+              htmlFor="name"
+            >
               Full Name
             </label>
             <input
@@ -33,8 +48,12 @@ const Rsvp = () => {
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#d2b6ae]"
             />
           </div>
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-2"
+              htmlFor="email"
+            >
               Email address
             </label>
             <input
@@ -45,8 +64,12 @@ const Rsvp = () => {
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#d2b6ae]"
             />
           </div>
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="Relationship">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-2"
+              htmlFor="Relationship"
+            >
               Relationship
             </label>
             <select
@@ -62,6 +85,7 @@ const Rsvp = () => {
               <option value="Other">Other</option>
             </select>
           </div>
+
           <div className="mb-4">
             <p className="mb-2">Coming for?</p>
             <div className="flex items-center gap-2">
@@ -80,9 +104,11 @@ const Rsvp = () => {
                 </button>
               ))}
             </div>
-            {/* Hidden input to submit value */}
+
+            {/* Hidden input for selected option */}
             <input type="hidden" name="comingFor" value={comingFor} required />
           </div>
+
           <div className="text-center mt-6">
             <button
               type="submit"

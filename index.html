@@ -6,7 +6,22 @@
     <title>My wedding website</title>
   </head>
   <body>
+    <!-- ✅ Netlify hidden form -->
+    <form name="rsvp" netlify hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="Relationship">
+        <option>Bride friend</option>
+        <option>Groom friend</option>
+        <option>Family</option>
+        <option>Other</option>
+      </select>
+      <input type="hidden" name="comingFor" />
+    </form>
+
+    <!-- React app root -->
     <div id="root"></div>
+
     <script type="module" src="src/main.jsx"></script>
   </body>
 </html>
