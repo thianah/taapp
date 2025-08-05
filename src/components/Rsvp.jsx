@@ -4,12 +4,6 @@ const Rsvp = () => {
   const [submitted, setSubmitted] = useState(false);
   const [comingFor, setComingFor] = useState(""); // Track which is selected
 
-  const handleSubmit = (e) => {
-    // Remove preventDefault to allow actual Netlify form submission
-    // e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <div>
       {!submitted ? (
@@ -18,10 +12,9 @@ const Rsvp = () => {
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
           className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md"
         >
-          {/* Hidden form name for Netlify */}
+          {/* Hidden input for Netlify form name */}
           <input type="hidden" name="form-name" value="rsvp" />
 
           {/* Honeypot field */}
@@ -104,8 +97,6 @@ const Rsvp = () => {
                 </button>
               ))}
             </div>
-
-            {/* Hidden input for selected option */}
             <input type="hidden" name="comingFor" value={comingFor} required />
           </div>
 
