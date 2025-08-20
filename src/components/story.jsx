@@ -14,29 +14,19 @@ function Story() {
               BRIDE
             </h2>
             <p className="text-lg leading-relaxed text-gray-600">
-              Abass and I went to the same secondary school, but that's not where
-              it all started from. We barely knew each other then because I
-              transferred to a different school.
-              <br />
-              Fastforward to a day in March 2023, and I had gone out to my
-              friend's place and taken a few pictures. Later, my sister who
-              happened to be friends with Abass at the time, uploaded one of my
-              photos on her WhatsApp status. That moment changed everything.
-              <br />
-              He saw the picture and messaged my sister and said, “My
-              wife is on your contact list.” My sister told me she found my
-              husband (smile) and then sent him my number and that was the beginning of everything.
-              
-            
-              <br />
-              I love him so much, and I can’t wait to spend the rest of my life with him.
+Sometime in 2023, my sister sent me a message saying, “I’ve found your husband.”
+This was after she had reposted my picture on her WhatsApp status. She went on to say that her friend had seen my picture and wanted to get to know me.
+Later that day, he messaged me, and I discovered that we had actually attended the same secondary school though we weren’t familiar with each other back then. We started talking that very night, and that was the beginning of a perfect love story written by God.
+Abass is smart and intelligent that’s one of my favorite things about him. Over the years we’ve been together, he has shown me a kind of true love I had never experienced before. I love him so much, and I’m grateful to be spending the rest of my life with him.
+
+
             </p>
           </div>
-          <div className="groom mt-4 bg-white p-8 rounded-lg shadow-lg"> {/* Adjust padding */}
+          <div className="groom mt-4 bg-white p-8 rounded-lg shadow-lg"> 
             <h2 className="text-2xl font-semibold mb-4 text-purple-950">
               GROOM
             </h2>
-            <p className="text-lg leading-relaxed text-gray-600">
+            <p className="text-lg leading-relaxed text-gray-800">
               Abass and I went to the same secondary school, but that's not where
               it all started from. We barely knew each other then because I
               transferred to a different school.

@@ -159,9 +159,6 @@ function Home() {
             <p className="text-sm text-white leading-relaxed">
               Nimann Event Center <br />
               Ikare Akoko{" "}
-              <span className="text-[#d2b6ae] italic underline cursor-pointer">
-                View Map
-              </span>
             </p>
           </div>
         </div>

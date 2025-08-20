@@ -3,43 +3,46 @@ import React from "react";
 const Gift = () => {
   return (
     <div className="gift-container">
-      <h1 className="gift-h1">Celebrate With Us Through Gifting</h1>
+      <h1 className="gift-h1">GIFT</h1>
 
       <p className="gift-p">
-        Your presence is the greatest gift we could ask for! But if you'd love
-        to go a step further and bless us with a gift, we've made it easy and
-        thoughtful. Instead of bringing physical items to the event — which we
-        may not be able to take home — you can choose to either send us a
-        monetary gift or purchase an item from our curated wishlist.
+        Your love and presence mean the world to us. If you’d like to bless us further, you can send a gift or choose from our curated wishlist.
+
       </p>
 
       <h2 className="gift-h2">How It Works:</h2>
       <div className="gift-list">
         <ul className="gift-ul">
-          <li className="gift-li">Click the button below and browse our wishlist.</li>
-          <li className="gift-li">Choose an item you'd love to gift us.</li>
-          <li className="gift-li">Amazon will handle the delivery to our address.</li>
           <li className="gift-li">
-            We'll receive your gift with gratitude and love, and we truly
-            appreciate your thoughtfulness either way.
+            <span className="red-asterisk">*</span> Click the button below and browse our wishlist.
+          </li>
+          <li className="gift-li">
+            <span className="red-asterisk">*</span> Choose an item you'd love to gift us.
+          </li>
+          <li className="gift-li">
+            <span className="red-asterisk">*</span> Amazon delivers it directly to us.
+          </li>
+          <li className="gift-li">
+            <span className="red-asterisk">*</span> We'll receive your gift with gratitude and love.
           </li>
         </ul>
       </div>
       <div className="gift-link-container">
         <a
           className="amazon-link"
-          href="https://www.amazon.nl/hz/wishlist/ls/1KOZASPXEUPU6?ref_=wl_share"
+          href="https://www.myregistry.com/giftlist/talovestory"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="View our Amazon wishlist"
         >
           View Wishlist
         </a>
       </div>
 
       <div className="monetary-gift">
-        <h1 className="monetary-gift-h1">Monetary Gift</h1>
+        
         <p className="monetary-gift-p">
-          If you prefer to give a monetary gift, you can send to the following accounts:
+           You can send your cash gift to the following accounts:
         </p>
 
         <div className="monetary-gift-details">
