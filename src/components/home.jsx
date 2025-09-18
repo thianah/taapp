@@ -6,7 +6,7 @@ import bgimage3 from "../Assets/CJII0466-Edit.jpg";
 import bgimage4 from "../Assets/CJII0472-Edit-2.jpg";
 import bgimage5 from "../Assets/CJII0485-Edit.jpg";
 import bgimage6 from "../Assets/CJII0541-Edit.jpg";
-import bgimage7 from "../Assets/CJII0561-Edit.jpg";
+import bgimage7 from "../Assets/CJII0561-Edit.jpg"; 
 
 const images = [
   bgimage,
