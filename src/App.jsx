@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Photo from './components/Photos';
-import Story from './components/Story';
-import Gift from './components/Gift';
+import Home from './components/home';
+import Photo from './components/photos';
+import Story from './components/story';
+import Gift from './components/gift';
 import Header from './header';
 import Sidebar from './navbar';
 import Rsvp from './components/Rsvp';
