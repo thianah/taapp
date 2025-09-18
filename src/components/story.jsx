@@ -19,7 +19,7 @@ function Story() {
             <h2 className="text-2xl font-semibold mb-4">
               ADENIKE
             </h2>
-            <p className="text-lg leading-relaxed text-gray-600">
+            <p className="text-lg leading-relaxed text-gray-600 text-justify">
               Sometime in 2023, my sister sent me a message saying, “I’ve found
               your husband.” This was after she had reposted my picture on her
               WhatsApp status. She went on to say that her friend had seen my
@@ -38,7 +38,7 @@ function Story() {
             <h2 className="text-2xl font-semibold mb-4">
               TEMITOPE
             </h2>
-            <p className="text-lg leading-relaxed text-gray-800">
+            <p className="text-lg leading-relaxed text-gray-600 text-justify">
               Abass and I went to the same secondary school, but that's not
               where it all started from. We barely knew each other then because
               I transferred to a different school.
