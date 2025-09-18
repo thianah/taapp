@@ -29,7 +29,7 @@ function ImageWithLoader({ src, alt, className }) {
     <div className="relative w-full flex items-center justify-center min-h-40">
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 border-4 border-[#d2b6ae] border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-[#bfceb5] border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
       <img

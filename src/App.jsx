@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/home';
-import Photo from './components/photos';
-import Story from './components/story';
-import Gift from './components/gift';
+import Home from './components/Home';
+import Photo from './components/Photos';
+import Story from './components/Story';
+import Gift from './components/Gift';
 import Header from './header';
 import Sidebar from './navbar';
 import Rsvp from './components/Rsvp';
@@ -12,15 +12,19 @@ import './index.css';
 function App() {
   return (
     <Router basename="/">
-      <Header />
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Photo" element={<Photo />} /> {/* Renamed route */}
-        <Route path="/Story" element={<Story />} />
-        <Route path="/Gift" element={<Gift />} />
-        <Route path="/Rsvp" element={<Rsvp />} />
-      </Routes>
+      <div className="min-h-screen flex flex-col bg-black">
+        <Header />
+        <Sidebar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/photo" element={<Photo />} />
+            <Route path="/story" element={<Story />} />
+            <Route path="/gift" element={<Gift />} />
+            <Route path="/rsvp" element={<Rsvp />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }

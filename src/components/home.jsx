@@ -29,11 +29,10 @@ function Home() {
       const img = new Image();
       img.src = src;
     };
-  
+
     preload(images[currentImage]);
     preload(images[(currentImage + 1) % images.length]);
   }, [currentImage]);
-  
 
   // Slideshow effect
   useEffect(() => {
@@ -105,7 +104,7 @@ function Home() {
         {/* Animated main heading and intro */}
         <div className="w-full max-w-xl text-center mb-4">
           <h1
-            className="text-4xl font-extrabold tracking-wide text-[#d2b6ae] mb-2 animate-fade-in"
+            className="text-5xl font-extrabold tracking-wide text-[#bfceb5] mb-2 animate-fade-in"
             style={{ animationDelay: "0.4s", animationFillMode: "both" }}
           >
             TEMITOPE
@@ -124,41 +123,40 @@ function Home() {
           </p>
         </div>
         {/* Event details with animation */}
-        <div className="flex flex-col md:flex-row gap-4 w-full max-w-2xl items-center justify-center mb-4">
+        <div className="flex flex-col md:flex-row gap-4 w-full max-w-3xl items-center justify-center mb-4">
           <div
-            className="flex-1 rounded-xl shadow-lg p-4 border-l-4 border-[#d2b6ae] bg-white-80 animate-fade-in"
+            className="flex-1 rounded-xl shadow-lg p-4 border-l-4 border-[#bfceb5] bg-white-80 animate-fade-in"
             style={{ animationDelay: "1.5s", animationFillMode: "both" }}
           >
-            <h2 className="text-base text-[#d2b6ae] italic mb-1 font-bold">
+            <h2 className="text-xl text-[#bfceb5] italic mb-1 font-bold">
               When
             </h2>
-            <p className="text-white text-sm">
+            <p className="text-white text-md">
               Saturday, Dec 20, 2025
               <br />
               <span className="italic text-white">
-                Traditional Wedding Ceremony:
-              </span>{" "}
-              10:00 am
+                Traditional Wedding Ceremony:  10:00 am
+              </span>
               <br />
               <span className="text-white">Wedding Reception:</span> 1:00 pm
             </p>
             {/* Countdown timer */}
-            <div className="text-base font-bold text-rose-900 bg-green-100 w-44 rounded-xl mb-2 mx-auto mt-2">
+            <div className="text-base font-bold text-rose-900 bg-green-100 px-4 py-2 rounded-xl mb-2 mx-auto mt-2 text-center">
               {timeLeft
                 ? `${timeLeft.days}D ${timeLeft.hours}H ${timeLeft.minutes}M ${timeLeft.seconds}S`
                 : "It's Wedding Time!"}
             </div>
           </div>
           <div
-            className="flex-1 rounded-xl shadow-lg p-4 border-l-4 border-[#d2b6ae]  animate-fade-in"
+            className="flex-1 rounded-xl shadow-lg p-4 border-l-4 border-[#bfceb5]  animate-fade-in"
             style={{ animationDelay: "1.7s", animationFillMode: "both" }}
           >
-            <h2 className="text-base text-[#d2b6ae] italic mb-1 font-bold">
+            <h2 className="text-xl text-[#bfceb5] italic mb-1 font-bold">
               Where
             </h2>
-            <p className="text-sm text-white leading-relaxed">
+            <p className="text-md text-white leading-relaxed">
               Nimann Event Center <br />
-              Ikare Akoko{" "}
+              Ikare Akoko, Ondo State.{" "}
             </p>
           </div>
         </div>
@@ -168,8 +166,8 @@ function Home() {
           style={{ animationDelay: "2s", animationFillMode: "both" }}
         >
           <button
-            onClick={() => (window.location.href = "/Rsvp")}
-            className="bg-[#d2b6ae] text-white md-50 text-base font-semibold px-6 py-2 rounded-full shadow-lg hover:bg-[#b89c91] transition duration-300"
+            onClick={() => (window.location.href = "/rsvp")}
+            className="bg-[#5d6654] text-white md-50 text-base font-semibold px-6 py-2 rounded-full shadow-lg hover:bg-[#b89c91] transition duration-300"
           >
             RSVP
           </button>
