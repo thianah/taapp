@@ -29,25 +29,23 @@ function Sidebar() {
         )}
 
         {/* Use Link components for navigation */}
-        <Link to="/" className="ho" onClick={toggleSidebar}>
-          HOME
-        </Link>
-        <br />
-        <Link to="/Story" className="ho" onClick={toggleSidebar}>
-        STORY
-        </Link>
-        <br />
-        <Link to="/Photo" className="ho" onClick={toggleSidebar}>
-          PHOTOS
-        </Link>
-        <br />
-        <Link to="/Gift" className="ho" onClick={toggleSidebar}>
-       GIFT
-        </Link>
-        <br />
-        <Link to="/Rsvp" className="ho" onClick={toggleSidebar}>
-          RSVP
-        </Link>
+        <nav className="sidebar-links">
+          <Link to="/" className="ho" onClick={toggleSidebar}>
+            HOME
+          </Link>
+          <Link to="/story" className="ho" onClick={toggleSidebar}>
+            STORY
+          </Link>
+          <Link to="/photo" className="ho" onClick={toggleSidebar}>
+            PHOTOS
+          </Link>
+          <Link to="/gift" className="ho" onClick={toggleSidebar}>
+            GIFTS
+          </Link>
+          <Link to="/rsvp" className="ho" onClick={toggleSidebar}>
+            RSVP
+          </Link>
+        </nav>
       </div>
     </div>
   );

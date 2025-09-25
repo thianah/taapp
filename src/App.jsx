@@ -12,15 +12,19 @@ import './index.css';
 function App() {
   return (
     <Router basename="/">
-      <Header />
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Photo" element={<Photo />} /> {/* Renamed route */}
-        <Route path="/Story" element={<Story />} />
-        <Route path="/Gift" element={<Gift />} />
-        <Route path="/Rsvp" element={<Rsvp />} />
-      </Routes>
+      <div className="min-h-screen flex flex-col bg-black">
+        <Header />
+        <Sidebar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/photo" element={<Photo />} />
+            <Route path="/story" element={<Story />} />
+            <Route path="/gift" element={<Gift />} />
+            <Route path="/rsvp" element={<Rsvp />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }

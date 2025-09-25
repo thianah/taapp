@@ -2,31 +2,28 @@ import React, { useState } from "react";
 
 const Rsvp = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [comingFor, setComingFor] = useState(""); // Track which is selected
+  const [comingFor, setComingFor] = useState("");
 
   return (
-    <div>
+    <div className="flex justify-center bg-gradient-to-b from-black via-gray-900 to-black px-4 pt-16">
       {!submitted ? (
         <form
           name="rsvp"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md"
+          className="w-full max-w-lg bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-8 md:p-10"
         >
           <input type="hidden" name="form-name" value="rsvp" />
 
-          <p hidden>
-            <label>
-              Don’t fill this out: <input name="bot-field" />
-            </label>
-          </p>
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+            RSVP FORM
+          </h2>
 
-          <h2 className="text-2xl font-bold text-center mb-6">RSVP Form</h2>
-
-          <div className="mb-4">
+          {/* Full Name */}
+          <div className="mb-6">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-xs font-semibold text-gray-500 uppercase mb-2"
               htmlFor="name"
             >
               Full Name
@@ -36,29 +33,31 @@ const Rsvp = () => {
               id="name"
               name="name"
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#d2b6ae]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bfceb5] transition"
             />
           </div>
 
-          <div className="mb-4">
+          {/* Email */}
+          <div className="mb-6">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-xs font-semibold text-gray-500 uppercase mb-2"
               htmlFor="email"
             >
-              Email address
+              Email Address
             </label>
             <input
               type="email"
               id="email"
               name="email"
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#d2b6ae]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bfceb5] transition"
             />
           </div>
 
-          <div className="mb-4">
+          {/* Relationship */}
+          <div className="mb-6">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-xs font-semibold text-gray-500 uppercase mb-2"
               htmlFor="Relationship"
             >
               Relationship
@@ -67,29 +66,32 @@ const Rsvp = () => {
               id="Relationship"
               name="Relationship"
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#d2b6ae]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bfceb5] transition"
             >
               <option value="">Select an option</option>
-              <option value="Bride friend">Bride's friend</option>
-              <option value="Groom friend">Groom's friend</option>
+              <option value="Bride friend">Bride's Friend</option>
+              <option value="Groom friend">Groom's Friend</option>
               <option value="Family">Family</option>
               <option value="Other">Other</option>
             </select>
           </div>
 
-          <div className="mb-4">
-            <p className="mb-2">Coming for?</p>
-            <div className="flex items-center gap-2">
+          {/* Coming For */}
+          <div className="mb-6">
+            <p className="text-xs font-semibold text-gray-500 uppercase mb-3">
+              Coming For?
+            </p>
+            <div className="flex flex-wrap gap-3">
               {["Bride", "Groom", "Both"].map((option) => (
                 <button
                   key={option}
                   type="button"
                   onClick={() => setComingFor(option)}
-                  className={`px-4 py-2 rounded-md border ${
+                  className={`flex-1 px-4 py-2 rounded-lg border text-sm font-medium transition duration-200 ${
                     comingFor === option
-                      ? "bg-[#d2b6ae] text-white border-[#d2b6ae]"
-                      : "bg-white text-[#d2b6ae] border-[#d2b6ae]"
-                  } transition duration-200`}
+                      ? "bg-[#5d6654] text-white border-[#bfceb5]"
+                      : "bg-white te border-[#bfceb5] hover:bg-[#f7f2f0]"
+                  }`}
                 >
                   {option}
                 </button>
@@ -98,20 +100,19 @@ const Rsvp = () => {
             <input type="hidden" name="comingFor" value={comingFor} required />
           </div>
 
-          <div className="text-center mt-6">
+          {/* Submit */}
+          <div className="mt-8">
             <button
               type="submit"
-              className="bg-[#d2b6ae] text-white px-6 py-2 rounded-md hover:bg-[#b89c91] transition duration-300"
+              className="w-full bg-[#5d6654] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b89c91] transition duration-300"
             >
-              Submit RSVP
+              Submit
             </button>
           </div>
         </form>
       ) : (
-        <div className="text-center mt-8">
-          <p className="text-gray-600 text-lg font-semibold">
-            Thank you for registering!
-          </p>
+        <div className="text-center mt-8 text-white">
+          <p className="text-lg font-semibold">Thank you for registering!</p>
         </div>
       )}
     </div>
