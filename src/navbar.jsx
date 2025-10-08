@@ -36,9 +36,9 @@ function Sidebar() {
           <Link to="/story" className="ho" onClick={toggleSidebar}>
             STORY
           </Link>
-          <Link to="/photo" className="ho" onClick={toggleSidebar}>
+          {/* <Link to="/photo" className="ho" onClick={toggleSidebar}>
             PHOTOS
-          </Link>
+          </Link> */}
           <Link to="/gift" className="ho" onClick={toggleSidebar}>
             GIFTS
           </Link>
