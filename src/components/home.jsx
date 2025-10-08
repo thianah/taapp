@@ -71,7 +71,7 @@ function Home() {
   return (
     <main
       id="home"
-      className="relative bg-cover  bg-black bg-center min-h-screen flex flex-col text-white overflow-hidden"
+      className="relative bg-cover bg-black bg-center min-h-screen flex flex-col text-white overflow-hidden"
       style={{ minHeight: "100vh", height: "100vh" }} // Force full viewport height
     >
       {/* Background crossfade layers */}
