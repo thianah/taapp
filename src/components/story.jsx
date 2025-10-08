@@ -34,8 +34,8 @@ function Story() {
               steady. Through the years we've shared, he has shown me a love
               that reflects God's own patience and kindness.
               <br />
-              <br />I thank God every day for his heart, his strength, and the
-              privilege of walking through life with him.
+              <br />I love him so much, and I’m grateful to be spending the rest
+              of my life with him.
             </p>
           </div>
           <div className="groom mt-4 bg-white p-8 rounded-lg shadow-lg">
