@@ -182,7 +182,12 @@ body {
 
 
 .toggle-button:hover {
-  background-color: #d16ba5;
+  background-color: transparent;
+}
+
+.toggle-button:focus-visible {
+  outline: 2px solid #bfceb5;
+  outline-offset: 2px;
 }
 
 /* Media query for smaller screens (phones) */
