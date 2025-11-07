@@ -3,9 +3,24 @@ import React, { useState } from "react";
 const Rsvp = () => {
   const [submitted, setSubmitted] = useState(false);
   const [comingFor, setComingFor] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [relationship, setRelationship] = useState("");
+
+  // Validation function
+  const isFormValid = () => {
+    return (
+      name.trim().length > 0 &&
+      email.trim().length > 0 &&
+      email.includes("@") &&
+      relationship !== "" &&
+      comingFor !== ""
+    );
+  };
 
   return (
-    <div className="flex justify-center bg-gradient-to-b from-black via-gray-900 to-black px-4 pt-16">
+    <div className="flex flex-col items-center bg-gradient-to-b from-black via-gray-900 to-black px-4 pt-6">
+      <h1 className="gift-h1 mb-8">RSVP</h1>
       {!submitted ? (
         <form
           name="rsvp"
@@ -15,10 +30,6 @@ const Rsvp = () => {
           className="w-full max-w-lg bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-8 md:p-10"
         >
           <input type="hidden" name="form-name" value="rsvp" />
-
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-            RSVP FORM
-          </h2>
 
           {/* Full Name */}
           <div className="mb-6">
@@ -33,6 +44,8 @@ const Rsvp = () => {
               id="name"
               name="name"
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bfceb5] transition"
             />
           </div>
@@ -50,6 +63,8 @@ const Rsvp = () => {
               id="email"
               name="email"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bfceb5] transition"
             />
           </div>
@@ -66,6 +81,8 @@ const Rsvp = () => {
               id="Relationship"
               name="Relationship"
               required
+              value={relationship}
+              onChange={(e) => setRelationship(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bfceb5] transition"
             >
               <option value="">Select an option</option>
@@ -104,7 +121,8 @@ const Rsvp = () => {
           <div className="mt-8">
             <button
               type="submit"
-              className="w-full bg-[#5d6654] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b89c91] transition duration-300"
+              disabled={!isFormValid()}
+              className="w-full bg-[#5d6654] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b89c91] transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#5d6654]"
             >
               Submit
             </button>

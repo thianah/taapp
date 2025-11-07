@@ -182,7 +182,12 @@ body {
 
 
 .toggle-button:hover {
-  background-color: #d16ba5;
+  background-color: transparent;
+}
+
+.toggle-button:focus-visible {
+  outline: 2px solid #bfceb5;
+  outline-offset: 2px;
 }
 
 /* Media query for smaller screens (phones) */
@@ -223,12 +228,17 @@ body {
   .ho:hover {
     color: #d16ba5;
   }
+
+  .ho.active {
+    color: #bfceb5;
+    font-weight: bold;
+    border-bottom: 2px solid #bfceb5;
+  }
 }
 
 /* Image optimization styles */
 img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  image-rendering: auto;
 }
 
 /* Progressive loading styles */
@@ -272,6 +282,7 @@ img {
     align-items: center;
     transition: none;
     z-index: 10;
+    pointer-events: none;
   }
 
   .sidebar.open,
@@ -281,6 +292,10 @@ img {
 
   .toggle-button {
     display: none;
+  }
+
+  .sidebar-links {
+    pointer-events: auto;
   }
 }
 
@@ -297,6 +312,7 @@ img {
   font-size: 3rem;
   margin-bottom: 1rem;
   background: #bfceb5;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
