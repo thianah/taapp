@@ -46,13 +46,12 @@ function Story() {
               because she left our school early on.
               <br />
               <br />
-              Years later, my friend, who happened to be her sister, shared her
-              number with me after posting her on WhatsApp.
+              Years later, my friend, who happened to be her sister posted her on whatsapp. I requested for her number and
+              messaged her later that day.
               <br />
               <br />
-              I messaged her later that day, and the more we spoke, the more I
-              realised what an incredible person she truly was. Initially, I was
-              sceptical about asking her out because of the long distance, but
+               The more we spoke, the more I realized she was every bit as incredible as she was beautiful. Initially, I was
+              skeptical about asking her out because of the long distance, but
               God's plan for us was bigger than the distance.
               <br />
               <br />
