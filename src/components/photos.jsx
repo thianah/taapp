@@ -23,20 +23,36 @@ const images = [
   bgimage10,
 ];
 
-function ImageWithLoader({ src, alt, className }) {
+function ImageWithLoader({ src, alt, className, fetchPriority = "auto" }) {
   const [loaded, setLoaded] = React.useState(false);
+  const [error, setError] = React.useState(false);
+
   return (
-    <div className="relative w-full flex items-center justify-center min-h-40">
-      {!loaded && (
+    <div
+      className="relative w-full flex items-center justify-center min-h-40"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "300px 300px" }}
+    >
+      {!loaded && !error && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 border-4 border-[#bfceb5] border-t-transparent rounded-full animate-spin"></div>
+          <div
+            className="w-8 h-8 border-4 border-[#bfceb5] border-t-transparent rounded-full animate-spin"
+            aria-label="Loading image"
+          ></div>
+        </div>
+      )}
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-800 text-white text-sm">
+          Failed to load image
         </div>
       )}
       <img
         src={src}
         alt={alt}
         loading="lazy"
+        decoding="async"
+        fetchpriority={fetchPriority}
         onLoad={() => setLoaded(true)}
+        onError={() => setError(true)}
         className={`${className} transition-opacity duration-500 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
@@ -54,10 +70,15 @@ function Photo() {
             <div
               key={index}
               className="relative w-full aspect-square overflow-hidden rounded-lg shadow-md group"
+              style={{
+                contentVisibility: "auto",
+                containIntrinsicSize: "1px 1px",
+              }}
             >
               <ImageWithLoader
                 src={image}
                 alt={`Wedding photo ${index + 1}`}
+                fetchPriority={index < 3 ? "high" : "auto"}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>

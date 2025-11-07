@@ -223,12 +223,17 @@ body {
   .ho:hover {
     color: #d16ba5;
   }
+
+  .ho.active {
+    color: #bfceb5;
+    font-weight: bold;
+    border-bottom: 2px solid #bfceb5;
+  }
 }
 
 /* Image optimization styles */
 img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  image-rendering: auto;
 }
 
 /* Progressive loading styles */
@@ -297,6 +302,7 @@ img {
   font-size: 3rem;
   margin-bottom: 1rem;
   background: #bfceb5;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

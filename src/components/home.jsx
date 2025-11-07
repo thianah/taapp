@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import bgimage from "../Assets/CJII0440-Edit.jpg";
 import bgimage2 from "../Assets/CJII0442-Edit.jpg";
@@ -6,7 +7,7 @@ import bgimage3 from "../Assets/CJII0466-Edit.jpg";
 import bgimage4 from "../Assets/CJII0472-Edit-2.jpg";
 import bgimage5 from "../Assets/CJII0485-Edit.jpg";
 import bgimage6 from "../Assets/CJII0541-Edit.jpg";
-import bgimage7 from "../Assets/CJII0561-Edit.jpg"; 
+import bgimage7 from "../Assets/CJII0561-Edit.jpg";
 
 const images = [
   bgimage,
@@ -18,7 +19,27 @@ const images = [
   bgimage7,
 ];
 
+// Custom hook for responsive window width
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 768
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowWidth;
+}
+
 function Home() {
+  const navigate = useNavigate();
+  const windowWidth = useWindowWidth();
   const [currentImage, setCurrentImage] = useState(0);
   const [prevImage, setPrevImage] = useState(0);
   const [fade, setFade] = useState(true);
@@ -27,6 +48,7 @@ function Home() {
   useEffect(() => {
     const preload = (src) => {
       const img = new Image();
+      img.decoding = "async";
       img.src = src;
     };
 
@@ -34,17 +56,22 @@ function Home() {
     preload(images[(currentImage + 1) % images.length]);
   }, [currentImage]);
 
-  // Slideshow effect
+  // Slideshow effect (respects reduced motion)
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return; // Disable slideshow when user prefers reduced motion
+
     const interval = setInterval(() => {
-      setFade(false); // Trigger fade out
+      setFade(false);
 
       setTimeout(() => {
         setPrevImage(currentImage);
         setCurrentImage((prev) => (prev + 1) % images.length);
-        setFade(true); // Start fade-in
-      }, 300); // Must be less than the CSS duration (1000ms)
-    }, 3000);
+        setFade(true);
+      }, 250);
+    }, 3500);
     return () => clearInterval(interval);
   }, [currentImage]);
 
@@ -77,21 +104,23 @@ function Home() {
       {/* Background crossfade layers */}
       <div className="absolute inset-0 w-full h-full z-0 bg-black overflow-hidden">
         <div
-          className="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out z-10"
+          className="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out z-10"
           style={{
             backgroundImage: `url(${images[prevImage]})`,
-            backgroundSize: window.innerWidth < 640 ? "cover" : "contain",
+            backgroundSize: windowWidth < 640 ? "cover" : "contain",
             backgroundPosition: "center",
             opacity: fade ? 0 : 1,
+            willChange: "opacity",
           }}
         />
         <div
-          className="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out z-20"
+          className="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out z-20"
           style={{
             backgroundImage: `url(${images[currentImage]})`,
-            backgroundSize: window.innerWidth < 640 ? "cover" : "contain",
+            backgroundSize: windowWidth < 640 ? "cover" : "contain",
             backgroundPosition: "center",
             opacity: fade ? 1 : 0,
+            willChange: "opacity",
           }}
         />
       </div>
@@ -135,7 +164,7 @@ function Home() {
               Saturday, Dec 20, 2025
               <br />
               <span className="italic text-white">
-                Traditional Wedding Ceremony:  10:00 am
+                Traditional Wedding Ceremony: 10:00 am
               </span>
               <br />
               <span className="text-white">Wedding Reception:</span> 1:00 pm
@@ -166,8 +195,9 @@ function Home() {
           style={{ animationDelay: "2s", animationFillMode: "both" }}
         >
           <button
-            onClick={() => (window.location.href = "/rsvp")}
+            onClick={() => navigate("/rsvp")}
             className="bg-[#5d6654] text-white md-50 text-base font-semibold px-6 py-2 rounded-full shadow-lg hover:bg-[#b89c91] transition duration-300"
+            aria-label="Navigate to RSVP page"
           >
             RSVP
           </button>
@@ -184,6 +214,11 @@ function Home() {
         }
         .animate-fade-in {
           animation: fade-in 1s ease forwards;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-fade-in { 
+            animation: none !important; 
+          }
         }
         `}
       </style>
