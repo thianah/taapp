@@ -7,7 +7,7 @@ function Story() {
       <div className="story text-center max-w-6xl">
         {" "}
         {/* Adjust max width */}
-        <h1 className="text-4xl font-bold mb-6 text-[#bfceb5]">
+        <h1 className="gift-h1">
           OUR LOVE STORY
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

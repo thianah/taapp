@@ -36,15 +36,11 @@ const hotels = [
 function Travel() {
   return (
     <main className="bg-black text-white">
-      <section className="relative overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black py-16 px-4 md:px-12">
+      <section className="relative overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black py-10 px-4 md:px-12">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#bfceb5] mb-4">
-            Travel & Accommodation
+          <h1 className="gift-h1">
+            VENUE
           </h1>
-          <p className="text-lg md:text-xl text-gray-200">
-            Plan your stay with ease. Find our celebration venue and nearby
-            hotels with maps direction below.
-          </p>
         </div>
       </section>
 
@@ -59,10 +55,6 @@ function Travel() {
                 <strong>Niiman Event Centre Ikare Akoko</strong>
                 <br />
                 Ondo State, Nigeria
-              </p>
-              <p className="text-gray-300 mb-6">
-                Our wedding festivities will be held at Niiman Event Centre. Use
-                the map to get your bearings and plan your journey with ease.
               </p>
               <a
                 href="https://maps.google.com/?q=Niiman+Hotel+Ikare+Akoko"

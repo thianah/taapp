@@ -30,10 +30,10 @@ function Sidebar() {
   };
 
   const navLinks = [
-    { to: "/", label: "HOME" },
+    // { to: "/", label: "HOME" }, // Home navigation handled via header logo
     { to: "/story", label: "STORY" },
     { to: "/photo", label: "PHOTOS" },
-    { to: "/travel", label: "TRAVEL" },
+    { to: "/travel", label: "VENUE" },
     { to: "/gift", label: "GIFTS" },
     { to: "/rsvp", label: "RSVP" },
   ];
