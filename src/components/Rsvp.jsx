@@ -19,7 +19,7 @@ const Rsvp = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gradient-to-b from-black via-gray-900 to-black px-4 pt-10">
+    <div className="flex flex-col items-center bg-gradient-to-b from-black via-gray-900 to-black px-4 pt-6">
       <h1 className="gift-h1 mb-8">RSVP</h1>
       {!submitted ? (
         <form

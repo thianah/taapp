@@ -89,7 +89,7 @@ function Photo() {
 
   return (
     <main>
-      <div id="photo" className="px-4 bg-black py-12 min-h-screen">
+      <div id="photo" className="px-4 bg-black py-6 min-h-screen">
         <div className="max-w-6xl mx-auto">
           <h1 className="gift-h1">GALLERY</h1>
           <div

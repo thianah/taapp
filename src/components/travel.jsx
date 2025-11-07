@@ -36,7 +36,7 @@ const hotels = [
 function Travel() {
   return (
     <main className="bg-black text-white">
-      <section className="relative overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black py-10 px-4 md:px-12">
+      <section className="relative overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black py-6 px-4 md:px-12">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="gift-h1">
             VENUE
