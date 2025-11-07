@@ -32,7 +32,7 @@ function Sidebar() {
   const navLinks = [
     // { to: "/", label: "HOME" }, // Home navigation handled via header logo
     { to: "/story", label: "STORY" },
-    { to: "/photo", label: "PHOTOS" },
+    { to: "/photo", label: "GALLERY" },
     { to: "/travel", label: "VENUE" },
     { to: "/gift", label: "GIFTS" },
     { to: "/rsvp", label: "RSVP" },
