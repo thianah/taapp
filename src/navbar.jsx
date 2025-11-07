@@ -33,6 +33,7 @@ function Sidebar() {
     { to: "/", label: "HOME" },
     { to: "/story", label: "STORY" },
     { to: "/photo", label: "PHOTOS" },
+    { to: "/travel", label: "TRAVEL" },
     { to: "/gift", label: "GIFTS" },
     { to: "/rsvp", label: "RSVP" },
   ];

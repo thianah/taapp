@@ -6,6 +6,7 @@ import Gift from "./components/gift";
 import Header from "./header";
 import Sidebar from "./navbar";
 import Rsvp from "./components/Rsvp";
+import Travel from "./components/travel";
 import ErrorBoundary from "./components/ErrorBoundary";
 import "./index.css";
 
@@ -21,6 +22,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/photo" element={<Photo />} />
               <Route path="/story" element={<Story />} />
+              <Route path="/travel" element={<Travel />} />
               <Route path="/gift" element={<Gift />} />
               <Route path="/rsvp" element={<Rsvp />} />
             </Routes>

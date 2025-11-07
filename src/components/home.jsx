@@ -184,7 +184,7 @@ function Home() {
               Where
             </h2>
             <p className="text-md text-white leading-relaxed">
-              Nimann Event Center <br />
+              Niiman Event Center <br />
               Ikare Akoko, Ondo State.{" "}
             </p>
           </div>
